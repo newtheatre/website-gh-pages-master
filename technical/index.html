@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html class="h-100">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Technical Specification &middot; The Nottingham New Theatre</title>
+  <meta name="description" content="By default, we do not permanently install any equipment into our spaces other than cable runs, leaving them fully adaptable and equipment available.">
+  <meta property="og:image" content="https://newtheatre.org.uk/images/logos/nnt_squares.png">
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600|Montserrat:400,500,600,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/main.css?cachebust=202102172100">
+  <link rel="canonical" href="/technical/" data-proofer-ignore>
+  <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.png" />
+  <link rel="author" href="/humans.txt" />
+
+  <!-- JQuery -->
+   <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-724643-13"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-724643-13');
+  </script>
+</head>
+
+<body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+    <nav class="nt-navbar" id="top">
+    <div class="brand-mobile"> 
+      <a href="/"><img src="/static/images/logos/nt_logo-web.png" height="50px" alt="New Theatre Logo" /></a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ntNavbar" aria-controls="ntNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse w-100" id="ntNavbar">
+      <ul class="nt-navbar-nav">
+        
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              What's On
+              
+            </a>
+          </li>
+        
+          <li class="nav-item ">
+            <a class="nav-link" href="/get-involved/">
+              Get Involved
+              
+            </a>
+          </li>
+        
+          <li class="nav-item ">
+            <a class="nav-link" href="/stuff/">
+              StuFF
+              
+            </a>
+          </li>
+        
+          <li class="nav-item ">
+            <a class="brand-large" href="/">
+              <img src="/static/images/logos/nt_logo-web.png" height="80px" alt="New Theatre Logo" /> 
+              
+            </a>
+          </li>
+        
+          <li class="nav-item ">
+            <a class="nav-link" href="/alumni/">
+              Alumni
+              
+            </a>
+          </li>
+        
+          <li class="nav-item active">
+            <a class="nav-link" href="/technical/">
+              Technical
+              
+            </a>
+          </li>
+        
+          <li class="nav-item ">
+            <a class="nav-link" href="/about/">
+              About
+              
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+  </nav>
+   
+    <div class="banner">
+      <div class="banner-image" style="background-image: url(/static/images/banner/tech.jpg">
+      </div>
+      <div class="container">
+        <h1 class="banner-text">
+          
+            Nottingham New Theatre: Full Technical Specification
+           
+        </h1>
+      </div>
+    </div>
+  
+  <div class="container ">
+    
+
+
+<div class="row">
+  <div class="clearfix">
+    <div class="toc-column">
+      <div class="card mb-2">
+        <div class="card-header bg-primary">
+          <!-- Table of Contents --> 
+          <h4>Technical Specification</h4>
+        </div>
+        <div class="toc-wrapper card-body bg-nnt-purple-dark px-2">
+          <ul class="toc-list">
+  <li class="toc-item"><a href="#venues">Venues</a>
+    <ul>
+      <li class="toc-item"><a href="#nnt-auditorium">NNT Auditorium</a></li>
+      <li class="toc-item"><a href="#nnt-studios">NNT Studios</a></li>
+    </ul>
+  </li>
+  <li class="toc-item"><a href="#dressing-room">Dressing Room</a></li>
+  <li class="toc-item"><a href="#equipment">Equipment</a>
+    <ul>
+      <li class="toc-item"><a href="#lighting">Lighting</a></li>
+      <li class="toc-item"><a href="#sound">Sound</a></li>
+      <li class="toc-item"><a href="#video">Video</a></li>
+    </ul>
+  </li>
+  <li class="toc-item"><a href="#set-and-scenery">Set and Scenery</a>
+    <ul>
+      <li class="toc-item"><a href="#scenic">Scenic</a></li>
+      <li class="toc-item"><a href="#staging">Staging</a></li>
+    </ul>
+  </li>
+  <li class="toc-item"><a href="#safety">Safety</a></li>
+</ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-9 content">
+      <p>By default, we do not permanently install any equipment into our spaces other than cable runs, leaving them fully adaptable and equipment available.</p>
+
+<p>For loading into either of our venues, Cherry Tree Hill can be used, but parking is only available in University Visitors’ Car Parks (restrictions apply).</p>
+
+<p>For more information on any of our spaces, please contact <a href="mailto:theatremanager@newtheatre.org.uk"><strong>Barney Hartwill</strong>, Theatre Manager</a>. For further information on our Technical Specification, please contact <a href="mailto:techmanager@newtheatre.org.uk"><strong>Cecilia Alexander</strong>, Technical Manager</a></p>
+
+<h1 id="venues">Venues</h1>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>Auditorium</td>
+      <td>Studio A</td>
+      <td>Studio B</td>
+    </tr>
+    <tr>
+      <td><strong>Capacity</strong></td>
+      <td>86 (max.)</td>
+      <td>30</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td><strong>Stage Dimensions</strong></td>
+      <td>7.2 x 7.8m (Can be extended by 1.2m at the front)</td>
+      <td>9 x 5m</td>
+      <td>10 x 5.4m</td>
+    </tr>
+    <tr>
+      <td><strong>Stage Floor</strong></td>
+      <td>MDF</td>
+      <td>Dance floor</td>
+      <td>Dance floor</td>
+    </tr>
+    <tr>
+      <td><strong>Grid Height</strong></td>
+      <td>3.8m</td>
+      <td>3m</td>
+      <td>2.5m</td>
+    </tr>
+    <tr>
+      <td><strong>Largest entrance to stage</strong></td>
+      <td>1.3 x 1.9m</td>
+      <td>1.4 x 1.9m</td>
+      <td>0.8 x 1.9m</td>
+    </tr>
+    <tr>
+      <td><strong>Load in via</strong></td>
+      <td>Main foyer</td>
+      <td>Fire escape</td>
+      <td>Studio foyer door</td>
+    </tr>
+    <tr>
+      <td><strong>CAD Drawings</strong></td>
+      <td><a href="/static/technical/Theatre-Rig.pdf">Theatre Rig (pdf)</a> <br /> <a href="/static/technical/Theatre-Stage-Floor.pdf">Theatre Stage Floor (pdf)</a></td>
+      <td><a href="/static/technical/Studio-A-Full.pdf">Studio A (pdf)</a></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="row">
+<div class="col-lg">
+<div class="nt-card nt-card-purple">
+
+      <h2 id="nnt-auditorium">NNT Auditorium</h2>
+
+      <div class="card-body">
+
+        <ul>
+          <li>There is no built-in crossover, or internal access to the dressing room from stage left.</li>
+          <li>SR Wing Dimensions: 4.8 x 3.8m</li>
+          <li>SL Wing Dimensions: 3.3 x 2.25m</li>
+          <li>Audio and video relay available to tech box, SR wing and dressing room.</li>
+        </ul>
+
+        <h4 id="power">Power</h4>
+
+        <ul>
+          <li>63/3 and 32/1 supply in SR wing</li>
+          <li>64 IWB circuits in grid; 8 ground circuits, all with 15A sockets. 6 hard-powered channels in the patch bay.</li>
+          <li>RCD-protected 13A sockets in both wings and USR.</li>
+        </ul>
+
+      </div>
+    </div>
+</div>
+<div class="col-lg">
+<div class="nt-card nt-card-orange">
+
+      <h2 id="nnt-studios">NNT Studios</h2>
+
+      <div class="card-body">
+
+        <p>There is no installed seating, and a rake can be achieved using <a href="#staging">Prolyte StageDex</a>.</p>
+
+        <ul>
+          <li>Both Studios have full surround curtains to achieve a full black box.</li>
+          <li>There are no wings</li>
+          <li>Short end of Studio A has a full wall mirror</li>
+        </ul>
+
+        <h4 id="power-1">Power</h4>
+
+        <p><strong>Studio A</strong></p>
+
+        <ul>
+          <li>32/3 supply</li>
+          <li>18 channels of dimming via 3x socapex outputs</li>
+          <li>Various 13A sockets at floor level</li>
+        </ul>
+
+        <p><strong>Studio B</strong></p>
+
+        <ul>
+          <li>Various 13A sockets at floor level</li>
+        </ul>
+
+      </div>
+    </div>
+</div>
+</div>
+
+<h1 id="dressing-room">Dressing Room</h1>
+
+<ul>
+  <li>Dimensions: 3 x 8.5m</li>
+  <li>Changing Rooms: Three cubicles, each measuring 2 x 2m</li>
+  <li>1x Accessible toilet</li>
+  <li>Kitchenette featuring: fridge, kettle, microwave, toaster, sink</li>
+  <li>Dressing table with illuminated mirror, seats 6</li>
+</ul>
+
+<h1 id="equipment">Equipment</h1>
+
+<h2 id="lighting">Lighting</h2>
+
+<div class="row">
+<div class="col-lg">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Fixture</th>
+          <th style="text-align: center">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Selecon Rama 1k Fresnel</td>
+          <td style="text-align: center">12</td>
+        </tr>
+        <tr>
+          <td>Selecon Acclaim 750W Fresnel</td>
+          <td style="text-align: center">16</td>
+        </tr>
+        <tr>
+          <td>CCT Minuette 650W Fresnel</td>
+          <td style="text-align: center">3</td>
+        </tr>
+        <tr>
+          <td>Strand Patt 743 1k</td>
+          <td style="text-align: center">8</td>
+        </tr>
+        <tr>
+          <td>Strand Patt 123 1k</td>
+          <td style="text-align: center">2</td>
+        </tr>
+        <tr>
+          <td>ETC Source 4 Jr Zoom 575W</td>
+          <td style="text-align: center">9</td>
+        </tr>
+        <tr>
+          <td>ETC Source 4 750W</td>
+          <td style="text-align: center">1</td>
+        </tr>
+        <tr>
+          <td>Selecon Condenser</td>
+          <td style="text-align: center">2</td>
+        </tr>
+        <tr>
+          <td>Selecon Acclaim Zoomspot</td>
+          <td style="text-align: center">5</td>
+        </tr>
+        <tr>
+          <td>Chauvet ColorDash PARQuad 18</td>
+          <td style="text-align: center">6</td>
+        </tr>
+        <tr>
+          <td>PAR 64</td>
+          <td style="text-align: center">8</td>
+        </tr>
+        <tr>
+          <td>PAR 16</td>
+          <td style="text-align: center">14</td>
+        </tr>
+        <tr>
+          <td>Strand Patt 137</td>
+          <td style="text-align: center">2</td>
+        </tr>
+        <tr>
+          <td>Chauvet Q Spot 460 LED</td>
+          <td style="text-align: center">4</td>
+        </tr>
+        <tr>
+          <td>Martin Atomic 3000 Strobe</td>
+          <td style="text-align: center">1</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+<div class="col-lg">
+
+    <h3 id="control">Control</h3>
+
+    <ul>
+      <li>ETC Ion w/ 20 Fader Wing</li>
+      <li>ETC Nomad w/ touch screen</li>
+      <li>Auditorium Tech Box is at the rear of the auditorium with room for 3 operators with a full view of the stage. Room is closed off wih a sliding window on the front.</li>
+    </ul>
+
+    <h3 id="dimmers">Dimmers</h3>
+
+    <ul>
+      <li>8x Zero88 Betapack 6-channel dimmers (total 48ch) with demux installed in Workshop</li>
+      <li>18-way Datapak III dimmer installed in Studio A (3x Socapex out)</li>
+      <li>ETC Smartpack 12-channel w/ 63/3 tail</li>
+      <li>2x Zero88 Alphapack 3-channel dimmers - 13A powered with manual faders or DMX control</li>
+    </ul>
+
+    <h3 id="effects">Effects</h3>
+
+    <ul>
+      <li>LookSolutions Unique 2.1 Hazer w/ DMX control</li>
+      <li>Martin Magnum 650 Smoke Machine w/ remote control</li>
+    </ul>
+
+  </div>
+</div>
+
+<h2 id="sound">Sound</h2>
+
+<div class="row">
+<div class="col-lg">
+
+    <h3 id="auditorium-install">Auditorium Install</h3>
+
+    <ul>
+      <li>2x RCF C3110 | FOH</li>
+      <li>1x RCF S8015LP Subwoofer | Under seats</li>
+      <li>2x JBL Control 1 | Tech Box</li>
+      <li>4x JBL Control 1 | New Theatre Foyer</li>
+      <li>Soundcraft Si Expression (24/8)</li>
+    </ul>
+
+    <h4 id="multicore">Multicore</h4>
+
+    <ul>
+      <li>12-ways (9/3) to SR wing</li>
+      <li>3-ways to SL wing</li>
+      <li>3-ways to Row D of the Auditorium</li>
+    </ul>
+
+    <h3 id="pa">PA</h3>
+
+    <ul>
+      <li>2x RCF ART-310A powered speakers w/ flying brackets</li>
+      <li>2x Bose speakers</li>
+      <li>2x Stereo speakers</li>
+      <li>1x P7000S in case</li>
+    </ul>
+
+  </div>
+<div class="col-lg">
+
+    <h3 id="microphones">Microphones</h3>
+
+    <ul>
+      <li>2x Shure SM58</li>
+      <li>1x Shure Beta 57</li>
+      <li>1x Shure SM57</li>
+      <li>2x BSS AR-113 DI boxes</li>
+      <li>K&amp;M Mic Stand w/ Boom</li>
+    </ul>
+
+    <h3 id="communication">Communication</h3>
+
+    <ul>
+      <li>TecPro and Altair comms</li>
+      <li>3x headsets in Auditorium Tech Box</li>
+      <li>1x headset in Auditorium SR wing</li>
+      <li>2x spare beltpacks and headsets</li>
+    </ul>
+
+    <h3 id="control-1">Control</h3>
+
+    <ul>
+      <li>Yamaha MG16/6FX</li>
+      <li>2x Mac Mini w/ QLab 4 Audio and Video License (8-out in the Auditorium; 2-out in the Studio)</li>
+    </ul>
+
+  </div>
+</div>
+
+<div class="row">
+<div class="col-lg">
+
+    <h2 id="video">Video</h2>
+
+    <ul>
+      <li>VGA and SDI run permanently run from Auditorium Tech Box to SR wing</li>
+      <li>BenQ MH733 projector w/ rigging mount</li>
+      <li>Epson EB-92 projector w/ rigging mount</li>
+      <li>QLab with Video License</li>
+    </ul>
+
+  </div>
+</div>
+
+<h1 id="set-and-scenery">Set and Scenery</h1>
+
+<div class="row"><div class="col-lg">
+
+    <h2 id="scenic">Scenic</h2>
+
+    <ul>
+      <li>No safety curtain or house tabs in any space</li>
+      <li>2x black drapes with clips to the top measuring 4 x 3m</li>
+      <li>8m tab track, in 3 sections, with runners</li>
+      <li>8x4m gauze with ties to the top</li>
+      <li>8x5m white cyc with eyelets to the top</li>
+      <li>Various 4ft wide flats at 8 and 10ft height</li>
+    </ul>
+
+  </div><div class="col-lg">
+
+    <h2 id="staging">Staging</h2>
+
+    <ul>
+      <li>19x Prolyte StageDex 2 x 1m</li>
+      <li>3x Prolyte StageDex 1 x 1m</li>
+      <li>Legs available at 20, 40, 60, and 80cm.</li>
+    </ul>
+
+  </div></div>
+
+<h1 id="safety">Safety</h1>
+
+<ul>
+  <li>All scenery, drapes, and backdrops must be fire resistant</li>
+  <li>We may carry out controlled flame tests and disallow any materials that are not suitably flame retardant.</li>
+  <li>All electrical equipment must be in good condition, have a current PAT certificate, have appropriate protective circuits, and be wired in accordance with current IEE regulations.</li>
+  <li>All equipment and staff must comply with the Electricity at Work Regulations 1989.</li>
+  <li>Electrical or rigging equipment may be disallowed at any time if it is deemed dangerous or inappropriate.</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  $( document ).ready(function() {
+    $('.content > h1').append('<a href="#top" class="float-right"><i class="fas fa-angle-up"></i></a>');
+  });
+</script> 
+  </div>
+  </main>
+    <div class="container-fluid footer bg-primary mt-auto">
+    <div class="container">
+      <div class="row small align-items-center py-1">
+        <div class="col-md-4 text-center text-md-left">
+          <ul class="list-inline my-2">
+            <li class="list-inline-item align-bottom"><a href="mailto:boxoffice@newtheatre.org.uk"><i class="fa fa-2x fa-envelope fa-fw"></i></a></li>
+            <li class="list-inline-item align-bottom"><a href="https://facebook.com/thenottinghamnewtheatre/"><i class="fab fa-2x fa-facebook fa-fw"></i></a></li>
+            <li class="list-inline-item align-bottom"><a href="https://twitter.com/thenewtheatre/"><i class="fab fa-2x fa-twitter fa-fw"></i></a></li>
+            <li class="list-inline-item align-bottom"><a href="https://instagram.com/nottinghamnewtheatre/"><i class="fab fa-2x fa-fw fa-instagram"></i></a></li>
+            <li class="list-inline-item align-top"><a href="https://www.su.nottingham.ac.uk/student-media-groups/newtheatre/"><img alt="University of Nottingham Students' Union" src="/static/images/logos/UoNSU_orange.png" style="max-height:25px" class="uonsu-orange" /></a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 text-center text-md-center pb-2 pb-md-0">
+          <span><em>&copy; The Nottingham New Theatre, 2021</em></span><br>
+          <em><a href="https://www.stagingchange.com/">Proudly part of the Staging Change Network</a></em>
+        </div>
+        <div class="col-md-4 text-center text-md-right">
+          <ul class="list-unstyled my-0">
+            
+              <li ">
+                
+                <a href="/show-resources/">
+                  Show Resources 
+                </a>
+              </li>
+            
+              <li ">
+                
+                <a href="/branding/">
+                  Branding 
+                </a>
+              </li>
+            
+              <li ">
+                
+                <a href="http://history.newtheatre.org.uk/">
+                  History Site 
+                </a>
+              </li>
+            
+              <li ">
+                
+                <a href="http://photos.newtheatre.org.uk/">
+                  Photo Gallery 
+                </a>
+              </li>
+            
+              <li ">
+                
+                <a href="/mailinglist/">
+                  Mailing List 
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  //Add class to TOC anchors (must have this class for Scrollspy to work 
+  $('.toc-item a').addClass('nav-link'); 
+  $('body').scrollspy({ selector: '.toc-item', offset: 40 });
+
+  // Smooth scrolling
+  // Select all links with hashes
+  $('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 500, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+
+  $(document).ready(function() { // Insert horizontal rule before each subsequent h1 to visually separate sections
+    $("<hr>").insertBefore('h1:nth-of-type(n+2)')
+  });
+
+  // Make UoNSU logo go darker on hover 
+  $(document).ready(function() {
+    $('.uonsu-orange').on( {
+      mouseenter: function() {
+        $(this).attr('src', '/static/images/logos/UoNSU_orange_dark.png');
+      },
+      mouseleave: function() {
+        $(this).attr('src', '/static/images/logos/UoNSU_orange.png');
+      }
+    });
+  });
+</script>
+</body>
+</html>
