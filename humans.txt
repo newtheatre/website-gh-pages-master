@@ -15,7 +15,7 @@
   Ben Woodford
 
 /* SITE */
-  Last update: 2021-10-08
+  Last update: 2021-10-21
   Language: English
   Doctype: HTML5
   Build System: Jekyll
