@@ -8330,3 +8330,6 @@ blockquote {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth; } }
