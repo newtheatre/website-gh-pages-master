@@ -10,7 +10,7 @@
   <meta property="og:image" content="https://newtheatre.org.uk/images/logos/nnt_squares.png">
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600|Montserrat:400,500,600,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="/css/main.css?cachebust=202205311932">
+  <link rel="stylesheet" href="/css/main.css?cachebust=202206010005">
   <link rel="canonical" href="/stuff/" data-proofer-ignore>
   <link rel="shortcut icon" type="image/x-icon" href="/static/images/favicon.png" />
   <link rel="author" href="/humans.txt" />
@@ -158,6 +158,11 @@
     <div class="spinner mx-auto"></div>
   </div>
 
+
+  <div id="whats-on">
+    <div class="spinner mx-auto"></div>
+  </div>
+
 <!-- The new Javascript bit --> 
 <script>
   $( document ).ready(function() {
@@ -180,8 +185,9 @@
       var show_html = '';
       var mini_list_html = '';
       var programme_links = [];
+      var no_shows_text = "There are no shows coming up. Check back later or check our social media for more information!"
       if (the_shows.length == 0) {
-        show_html += '<div class="col w-80 mx-auto text-center text-muted"><p>There are no shows coming up. Check back later or check our social media for more information!</p></div>'
+        show_html += '<div class="col w-80 mx-auto text-center text-muted"><p>' + no_shows_text + '</p></div>'
         mini_list_html = show_html
       } 
       show_html = show_html + ('<div class="row">');
@@ -296,13 +302,21 @@
     else if (the_shows[i - 1].end_date != the_shows[i].end_date) {
       mini_list_html += '</table></div><div class="col-md-6"><h2>' + date_string + '</h2><table class="table table-responsive table-borderless table-sm">'
     }
+    if (typeof(time_string)==='undefined'){ var time_string = '(Times below)' }
+      // Could use the_shows[i].occurrenes_formatted but the string is quite long. Quick fix for now.
     mini_list_html += '<tr><td>' + time_string + '</td><td><a href="#anchor_' + the_shows[i].id + '"><strong>' + the_shows[i].name + '</strong></a> <br /><em>' + the_shows[i].location + '</em></td></tr>'
     }
 
     mini_list_html += '</table></div>';
     show_html = show_html + '</div>'; // End row 
     
-      document.getElementById('mini_list').innerHTML = mini_list_html;
+        document.getElementById('mini_list').innerHTML = mini_list_html;
+    
+    
+      document.getElementById('whats-on').innerHTML = show_html;
+      if ((the_shows.length == 0) && (document.getElementById('mini_list').innerHTML.includes(no_shows_text) === document.getElementById('whats-on').innerHTML.includes(no_shows_text))){
+        document.getElementById('whats-on').innerHTML = '';
+      }
     
 
     $('a.reserve_button').click(function(event) {
