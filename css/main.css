@@ -8179,6 +8179,19 @@ span.season-fringe {
   text-decoration: underline;
   text-decoration-color: #FFC425; }
 
+.card-studio {
+  border-color: #FFC425; }
+  .card-studio .reserve_button, .card-studio .programme_button {
+    border-color: #FFC425;
+    background-color: #FFC425; }
+    .card-studio .reserve_button:hover, .card-studio .programme_button:hover {
+      background-color: #f1b000;
+      border-color: #f1b000; }
+
+span.season-studio {
+  text-decoration: underline;
+  text-decoration-color: #FFC425; }
+
 .card-external {
   border-color: #2D9189; }
   .card-external .reserve_button, .card-external .programme_button {
